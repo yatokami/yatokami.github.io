@@ -4,6 +4,34 @@
   
     
     <entry>
+      <title><![CDATA[Node入门之安装Node]]></title>
+      <url>https://yatokami.github.io/2016/09/17/NodeStart1/</url>
+      <content type="html"><![CDATA[<h1 id="Nodejs究竟是什么？"><a href="#Nodejs究竟是什么？" class="headerlink" title="Nodejs究竟是什么？"></a>Nodejs究竟是什么？</h1><blockquote>
+<p> 在网上有很多新人都认为nodejs是一门新语言,其实这是错误的，Node是一个服务器程序，nodejs说到底只是运行在服务器上的javascript。Node本身运行是靠Google开发的 V8 JavaScript引擎在浏览器上快速解析并执行代码。</p>
+</blockquote>
+<h1 id="如何在安装Nodjs呢？"><a href="#如何在安装Nodjs呢？" class="headerlink" title="如何在安装Nodjs呢？"></a>如何在安装Nodjs呢？</h1><h2 id="在windows下安装并运行nodejs"><a href="#在windows下安装并运行nodejs" class="headerlink" title="在windows下安装并运行nodejs"></a>在windows下安装并运行nodejs</h2><h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><blockquote>
+<p>首先进入Node官网 <a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a> 可以直接如下图多个下载选择<br><img src="http://odoqyfmpu.bkt.clouddn.com/1.png" alt="image"><br>这里你可以根据自己电脑系统进行选择下载。这里因为我们是windows所以我们推荐使用.msi后缀的文件下载。下载后文件如下<br><img src="http://odoqyfmpu.bkt.clouddn.com/2.png" alt="image"><br>双击这个安装包<img src="http://odoqyfmpu.bkt.clouddn.com/3.png" alt="image">    </p>
+<p><strong>这里默认安装与C盘下，我们也选择默认next下一步</strong> </p>
+<p><img src="http://odoqyfmpu.bkt.clouddn.com/4.png" alt="image"><br>这里是选择你要安装的功能我们依旧默认下一步，至此我们安装已经全部完成，接下来如何检验是否安装成功,只要用户打开cmd(win+R)在命令行输入node<br><img src="http://odoqyfmpu.bkt.clouddn.com/5.png" alt="image">  </p>
+<p>出现以上界面则说明安装成功。</p>
+</blockquote>
+<h3 id="运行nodejs"><a href="#运行nodejs" class="headerlink" title="运行nodejs"></a>运行nodejs</h3><blockquote>
+<p>这里假设我们在D盘新建文件夹Test，接下来右键新建文件app.js<br><img src="http://odoqyfmpu.bkt.clouddn.com/6.png" alt="image"><br><img src="http://odoqyfmpu.bkt.clouddn.com/7.png" alt="image"><br>接下来编辑app.js中内容<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"这是第一个node"</span>)</div></pre></td></tr></table></figure></p>
+<p>最后到了windows下最关键的一步了，我经常看见刚刚入坑的朋友出现这样的问题。许多朋友们都是直接在命令行输入node app.js也就是下图所示的样子，然后系统提示没有找到这个模块。<br><img src="http://odoqyfmpu.bkt.clouddn.com/8.png" alt="image"><br>这是因为我们的文件是在D盘下建立的而node这个命令只能运行你当前目录下的文件，而windows下cmd默认目录是<strong>c:\Users\用户名</strong> 这个目录。所以我们必须先将目录cd到d盘test目录下，然后使用node app.js来运行文件。<br><img src="http://odoqyfmpu.bkt.clouddn.com/9.png" alt="image"><br>可以看见出现了<strong>这是第一个node</strong>说明运行成功  </p>
+</blockquote>
+<h2 id="在linux下安装并运行nodejs"><a href="#在linux下安装并运行nodejs" class="headerlink" title="在linux下安装并运行nodejs"></a>在linux下安装并运行nodejs</h2><h3 id="安装nodejs-1"><a href="#安装nodejs-1" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><blockquote>
+<p>在Linux下我推荐使用nvm来管理node，因为nvm可以通过命令来进行多个版本之间切换。<br>首先我们需要安装nvm,可以使用<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.<span class="number">29.0</span>/install.sh | bash</div><div class="line"></div><div class="line">这个命令来安装nvm。 测试是否安装成功只要使用command -v nvm就可以看到是否安装成功</div><div class="line">如果没有成功可以试试重启终端。  </div><div class="line"></div><div class="line">nvm install stable          最新版的<span class="keyword">node</span>  </div><div class="line"><span class="title">nvm</span> install <span class="number">5.10</span>.<span class="number">1</span>          <span class="number">5.10</span>.<span class="number">1</span>版本的<span class="keyword">node</span></div><div class="line"><span class="title">nvm</span> use <span class="number">5</span>                   切换到<span class="number">5.10</span>.<span class="number">1</span>版本</div><div class="line">nvm current                 最后一次下载的版本  </div><div class="line"></div><div class="line">查看<span class="keyword">node</span><span class="title">和npm</span>安装是否成功使用  </div><div class="line"></div><div class="line"><span class="keyword">node</span> <span class="title">-v</span> </div><div class="line">npm -v</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="http://odoqyfmpu.bkt.clouddn.com/10.png" alt="image"><br><img src="http://odoqyfmpu.bkt.clouddn.com/11.png" alt="image"><br>都出现出现版本号则说明安装成功。  </p>
+<h3 id="运行nodejs-1"><a href="#运行nodejs-1" class="headerlink" title="运行nodejs"></a>运行nodejs</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">mkdir</span> <span class="keyword">test</span>      新建<span class="keyword">test</span>文件夹</div><div class="line">touch <span class="keyword">app</span>.js    新建<span class="keyword">app</span>.js文件</div><div class="line">使用linux自带的vi/vim，为<span class="keyword">app</span>.js编辑内容</div><div class="line">console.<span class="built_in">log</span>(<span class="string">"这是第一个node"</span>)</div><div class="line"></div><div class="line">然后  </div><div class="line"></div><div class="line"><span class="keyword">cd</span> <span class="keyword">test</span></div><div class="line">node <span class="keyword">app</span>.js</div></pre></td></tr></table></figure>
+<blockquote>
+<p>可以看见出现了<strong>这是第一个node</strong>说明运行成功  </p>
+<p>参考链接<br><a href="http://www.tuicool.com/articles/Vzquy2" target="_blank" rel="external">使用 nvm 管理不同版本的 node 与 npm</a><br><a href="http://www.ibm.com/developerworks/cn/opensource/os-nodejs/" target="_blank" rel="external">nodejs究竟是什么</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>https://yatokami.github.io/2016/09/10/Hello-World/</url>
       <content type="html"><![CDATA[<p>xxx</p>
